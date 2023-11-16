@@ -1,0 +1,64 @@
+// .banner {
+//     height: 2rem; /* 10% of the viewport height */
+//     display: flex;
+//     overflow: hidden;
+//     position: relative;
+//     align-items: center;
+//   }
+  
+//   .message-container {
+//     display: flex;
+//     // animation: circularMotion 15s linear infinite;
+//   }
+  
+//   .message {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     padding: 0 10px; /* Add padding to separate messages */
+//   }
+  
+
+  
+//   @keyframes circularMotion {
+//     0%, 100% {
+//       transform: translateX(100%); /* Start and end off-screen to the right */
+//     }
+//     25% {
+//       transform: translateX(0); /* Move to the center */
+//     }
+//     50% {
+//       transform: translateX(-100%); /* Move off-screen to the left */
+//     }
+//     75% {
+//       transform: translateX(-200%); /* Move to the center again */
+//     }
+//   }
+
+
+
+
+.message-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50px; /* Adjust the height as needed */
+  }
+  
+  .message {
+    display: flex;
+    position: absolute;
+    left: -100%; /* Move the message off-screen initially */
+    top: 0;
+    white-space: nowrap;
+    animation: moveMessage 10s linear infinite;
+  }
+  
+  @keyframes moveMessage {
+    0% {
+      left: -100%; /* Start off-screen */
+    }
+    100% {
+      left: 100%; /* Move the message to the right edge of the screen */
+    }
+  }

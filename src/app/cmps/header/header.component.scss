@@ -1,0 +1,46 @@
+.header {
+  background-color: #4d4d4d;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  li {
+    margin-right: 15px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.logo-cart {
+  display: flex;
+}
+
+.logo {
+  img {
+    height: 5rem;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img{
+    padding-right:1rem;
+    padding-left: 2rem;
+  }
+}

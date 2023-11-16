@@ -1,0 +1,24 @@
+<!-- <section class="card">
+    <p>{{ item.name }}</p>
+    <p>{{ item.category }}</p>
+    <p>{{ item.price }}</p>
+    <button (click)="goToDetails()" [routerLink]="['/product', item.id]">more</button>
+    <button (click)="addToCart()" >add</button>
+</section> -->
+
+<section class="card" [routerLink]="['/product', item.id]">
+  <div class="gallery" *ngIf="item.images.length > 0">
+    <button (click)="prevImage()" class="carousel-button">&#8249;</button>
+    <img [src]="currentImage" alt="Product Image" class="carousel-image" />
+    <button (click)="nextImage()" class="carousel-button">&#8250;</button>
+  </div>
+  <div class="info">
+      <p>{{ item.name }}</p>
+      <p>{{ item.price | shekel}}</p>
+  </div>
+  <!-- <p>{{ item.category }}</p> -->
+  <!-- <button (click)="goToDetails()" [routerLink]="['/product', item.id]">
+    more
+  </button>
+  <button (click)="addToCart()">add</button> -->
+</section>

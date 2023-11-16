@@ -1,0 +1,110 @@
+<div class="product-page">
+<app-header></app-header>
+  <!-- First Part: Image Gallery -->
+  <div class="gallery-details">
+    <div class="gallery-container">
+      <div class="main-image">
+        <!-- Display the main image of the product -->
+        <img [src]="selectedImage" alt="Product Image" />
+      </div>
+      <div class="image-bar">
+        <!-- Display a bar of all product images -->
+        <div
+          *ngFor="let image of itemDetails.images"
+          (click)="selectImage(image)"
+        >
+          <img [src]="image" alt="Product Image Thumbnail" />
+        </div>
+      </div>
+    </div>
+
+    <div class="details-container">
+      <div class="details">
+        <div class="category-link">
+          <p [routerLink]="['/home', itemDetails.category]">
+            {{ itemDetails.category }}
+          </p>
+        </div>
+        <p class="product-name">{{ itemDetails.name }}</p>
+        <p class="price">{{ itemDetails.price | shekel }}</p>
+      </div>
+
+      <div class="options">
+        <div class="color-options">
+          <!-- Display color options, you can use a dropdown or radio buttons -->
+          <label>Color:</label>
+          <div class="colors-btn" *ngFor="let color of colorOptions">
+            <button
+              type="button"
+              [class.selected]="selectedColor === color"
+              (click)="selectColor(color)"
+            >
+              {{ color }}
+            </button>
+          </div>
+        </div>
+
+        <div class="size-options">
+          <!-- Display size options, you can use a dropdown or radio buttons -->
+          <label>Size:</label>
+          <div *ngFor="let size of sizeOptions">
+            <button
+              type="button"
+              [class.selected]="selectedSize === size"
+              (click)="selectSize(size)"
+            >
+              {{ size }}
+            </button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="add-btn">
+            <button class="btn" (click)="addToCart()">הוסף לסל</button>
+          </div>
+          <div class="user-message">✦ משלוח חינם בהזמנה מעל ₪650 ✦</div>
+          <div class="advertisement">
+            <h3>עד 50 אחוז הנחה על כל בגדי הים</h3>
+            <h4>עכשיו לזמן מוגבל</h4>
+          </div>
+        </div>
+
+        <mat-accordion>
+          <mat-expansion-panel
+            *ngFor="let field of dropdownFields"
+            (opened)="field.isOpen = true"
+            (closed)="field.isOpen = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title (click)="toggleDropdown(field)">{{
+                field.title
+              }}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngIf="field.isOpen">
+              <!-- Display information related to the selected field -->
+              {{ field.content }}
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+      <!-- Second Part: Product Details -->
+
+      <!-- Third Part: Theme Image and Text -->
+      <!-- <div class="theme-container">
+    <img src="path/to/theme-image.jpg" alt="Theme Image">
+    <div class="theme-text">
+      <p>Your theme text goes here.</p>
+    </div>
+  </div>
+</div> -->
+
+</div>
+
+
+</div>
+
+
+
+<app-footer></app-footer>
+</div>

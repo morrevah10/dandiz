@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<!-- <div *ngFor="let item of cartItems; let i = index">
+    <div class="cart-item">
+      <p>{{ item.name }}</p>
+      <p>Size: {{ item.size }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      <p>Unit Price: {{ item.price }}</p>
+      <p>Total Price: {{ item.quantity * item.price }}</p>
+      <button (click)="removeItem(i)">Remove</button>
+    </div>
+  </div> -->
+
+
+  <div class="cart-page">
+    <div class="cart-header">
+      <h1>My Shopping Basket</h1>
+      <a routerLink="/">Back to Store</a>
+    </div>
+  
+    <div class="cart-table">
+      <div class="table-header">
+        <div>Items</div>
+        <div>Price</div>
+        <div>Quantity</div>
+        <div>Actions</div>
+        <div>Total</div>
+      </div>
+  
+      <div *ngFor="let item of cartItems" class="table-row">
+        <div class="item-details">
+          <img [src]="item.image" alt="{{ item.name }}">
+          <div>
+            <p>{{ item.name }}</p>
+            <p>Size: {{ item.size }}</p>
+          </div>
+        </div>
+        <div>{{ item.price | currency }}</div>
+        <div>
+          <input type="number" [(ngModel)]="item.quantity" min="1">
+        </div>
+        <div>
+          <button (click)="removeItem(item.id)">Remove</button>
+        </div>
+        <div>{{ item.quantity * item.price | currency }}</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <app-footer></app-footer>

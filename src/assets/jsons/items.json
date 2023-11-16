@@ -1,0 +1,45 @@
+
+{
+    "items": [
+      {
+        "id":"1",
+        "name": "Product 1",
+        "category": "Shirts",
+        "price":30,
+        "images": [
+          "../../assets/test/1.jpeg",
+          "../../assets/test/2.jpeg",
+          "../../assets/test/3.jpeg",
+          "../../assets/test/4.jpeg"
+        ]
+      },
+      {
+        "id":"2",
+        "name": "Product 2",
+        "category": "Pants",
+        "price":20,
+        "images": [
+            "../../assets/test/1.jpeg",
+            "../../assets/test/2.jpeg",
+            "../../assets/test/3.jpeg",
+            "../../assets/test/4.jpeg",
+            "../../assets/test/5.jpeg"
+        ]
+      },
+      {
+        "id":"3",
+        "name": "Product 3",
+        "category": "Hats",
+        "price":10,
+        "images": [
+            "../../assets/test/1.jpeg",
+            "../../assets/test/2.jpeg",
+            "../../assets/test/3.jpeg",
+            "../../assets/test/4.jpeg",
+            "../../assets/test/5.jpeg"
+        ]
+      }
+    ]
+  }
+
+  

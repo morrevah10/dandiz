@@ -1,0 +1,36 @@
+<div class="filter-container">
+  <div class="options">
+    <div
+      *ngFor="let option of filterOptions"
+      [class.active]="selectedOption === option"
+      (click)="selectOption(option)"
+    >
+      {{ option }}
+    </div>
+  </div>
+
+  <div class="search">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search..."
+      (input)="applyFilters()"
+    />
+  </div>
+
+  <div class="sorting-options">
+    <select
+      [(ngModel)]="selectedSortingOption"
+      (ngModelChange)="applyFilters()"
+    >
+      <option value="cheapToExpensive">Cheap to Expensive</option>
+      <option value="expensiveToCheap">Expensive to Cheap</option>
+      <option value="newToOld">New to Old</option>
+      <option value="oldToNew">Old to New</option>
+    </select>
+  </div>
+</div>
+
+<div class="item-list">
+  <app-card *ngFor="let item of filteredItems" [item]="item"></app-card>
+</div>

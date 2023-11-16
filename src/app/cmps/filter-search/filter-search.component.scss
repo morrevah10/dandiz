@@ -1,0 +1,46 @@
+.filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .options {
+    display: flex;
+  }
+  
+  .options div {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .options div.active {
+    background-color: #ddd;
+  }
+  
+  .search input {
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  .sorting-options select {
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .item-list div {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
